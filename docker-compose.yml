@@ -1,0 +1,9 @@
+version: '3'
+services:
+  service:
+    restart: 'unless-stopped'
+    build: .
+    env_file:
+      - '.env.prod'
+    ports: 
+      - '18030:8080'
