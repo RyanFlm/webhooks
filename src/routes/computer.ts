@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
   else {
     switch (req.query.f) {
       case "start":
-        wol.wake(process.env.MAC_ADDRESS, { address: process.env.BROADCAST_IP }, e => e ? console.error(e) : console.log("Magic packet sent successfully"));
+        wol.wake(process.env.MAC_ADDRESS, { address: process.env.BROADCAST_IP, num_packets: 10, interval: 200 }, e => e ? console.error(e) : console.log("Magic packet sent successfully"));
         ret.message = "PC is waking up";
         break;
       case "stop":
