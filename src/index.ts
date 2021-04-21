@@ -6,8 +6,8 @@ import computerRoute from './routes/computer';
 
 const app = express();
 
-app.use('/data', dataRoute);
-app.use('/computer', cors(), computerRoute);
+app.use('/data', dataRoute); // Ein Route zu Datenbanken
+app.use('/computer', cors(), computerRoute); // Ein Route zum Steuern eines Computers
 
 app.all("/", (req, res) => res.json({ message: "Welcome to Maxi's webhook service" }));
 
