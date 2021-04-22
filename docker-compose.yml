@@ -5,5 +5,4 @@ services:
     build: .
     env_file:
       - '.env.prod'
-    ports: 
-      - '18030:8080'
+    network_mode: host
